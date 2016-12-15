@@ -1,0 +1,7 @@
+{
+  "name": "DonorBlood-Web",
+  "short_name": "A Node based web admin panel to handle DonorBlood android app",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "DonorBlood Web",
+  "launch_path": "/index.html",
+  "description": "A Node based web admin panel to handle DonorBlood android app",
+  "developer": {
+    "name": "Amal Thomas",
+    "url": "https://thegta.in"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "DonorBlood Web",
+      "description": "A Node based web admin panel to handle DonorBlood android app"
+    }
+  }
+}
