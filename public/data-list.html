@@ -1,0 +1,32 @@
+<link rel="import" href="bower_components/app-elements/na-elements.html">
+<link rel="import" href="bower_components/polymerfire/polymerfire.html">
+<dom-module id="data-list">
+  <template>
+    <style include="note-app-shared-styles"></style>
+    <na-toolbar signed-in="[[signedIn]]" on-sign-out="signOut">
+    </na-toolbar>
+    <na-login on-sign-in="signIn" signed-in="[[signedIn]]">
+    </na-login>
+    <firebase-auth id="auth" app-name="notes" provider="google" signed-in="{{signedIn}}" user="{{user}}">
+    </firebase-auth>
+    <firebase-query id="query" app-name="notes" path="/donor" data="{{notes}}">
+    </firebase-query>
+    <div class="notes">
+      <template is="dom-repeat" items="[[notes]]" as="note">
+        <na-note id$="[[note.$key]]" title="[[note.name]]" body="[[note.bloodGroup]]">
+        </na-note>
+      </template>
+    </div>
+  </template>
+  <script>
+  Polymer({
+    is: 'data-list',
+
+    behaviors: [Polymer.NoteAppBehavior],
+
+    signIn: function() {
+      this.$.auth.signInWithPopup();
+    }
+  });
+</script>
+</dom-module>
